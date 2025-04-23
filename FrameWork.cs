@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UIElements;
 
-public class FrameWork : MonoBehaviour
+public class Phoenix : MonoBehaviour
 {
     [Header("Player Movement")]
     public float moveSpeed = 5f;
@@ -41,7 +41,7 @@ public class FrameWork : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-        // Õ—ﬂ… ··√„«„ »‰«¡ ⁄·Ï « Ã«Â «·Ã”„
+        // √ç√ë√ü√â √°√°√É√£√á√£ √à√§√á√Å√∞ √ö√°√¨ √á√ä√å√á√• √á√°√å√ì√£
         Vector3 moveDirection = playerTransform.forward * vertical * moveSpeed;
 
         rb.linearVelocity = new Vector3(moveDirection.x, rb.linearVelocity.y, moveDirection.z);
@@ -51,13 +51,13 @@ public class FrameWork : MonoBehaviour
 
     public void Rotate(Rigidbody rb, float horizontalInput)
     {
-        // ﬁ—«¡… «·„œŒ·«  «·„—”·… ··œÊ—«‰ ÕÊ· «·„ÕÊ—Ì‰ X Ê Y
+        // √û√ë√á√Å√â √á√°√£√è√é√°√á√ä √á√°√£√ë√ì√°√â √°√°√è√¶√ë√á√§ √ç√¶√° √á√°√£√ç√¶√ë√≠√§ X √¶ Y
         float rotationY = horizontalInput * rotationSpeed * Time.deltaTime;
 
-        // ≈‰‘«¡ œÊ—«‰ ÃœÌœ »«” Œœ«„ «·„Õ«Ê—
+        // √Ö√§√î√á√Å √è√¶√ë√á√§ √å√è√≠√è √à√á√ì√ä√é√è√á√£ √á√°√£√ç√á√¶√ë
         Vector3 rotation = new Vector3(0f, rotationY, 0f);
 
-        //  ÿ»Ìﬁ «·œÊ—«‰ ⁄·Ï Rigidbody
+        // √ä√ò√à√≠√û √á√°√è√¶√ë√á√§ √ö√°√¨ Rigidbody
         rb.MoveRotation(rb.rotation * Quaternion.Euler(rotation));
     }
 
@@ -90,10 +90,7 @@ public class FrameWork : MonoBehaviour
     // Shooting
     public void Shoot()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            SpawnBullet();
-        }
+        SpawnBullet();
     }
 
     public void SpawnBullet()
@@ -207,7 +204,7 @@ public class FrameWork : MonoBehaviour
             hasShield = false;
             return;
         }
-        // Â‰« Ì„ﬂ‰ﬂ ≈÷«›… „‰ÿﬁ  ﬁ·Ì· «·’Õ…
+        // √•√§√á √≠√£√ü√§√ü √Ö√ñ√á√ù√â √£√§√ò√û √ä√û√°√≠√° √á√°√ï√ç√â
     }
 
     // ================================================
