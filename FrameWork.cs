@@ -286,4 +286,10 @@ public class Phoenix : MonoBehaviour
     {
         isGrounded = grounded;
     }
+
+    public void CameraFollowing(Transform cam, Vector3 offset)
+{
+    cam.position = transform.position + transform.rotation * offset;
+    cam.rotation = transform.rotation;
+}
 }
